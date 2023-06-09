@@ -1,8 +1,8 @@
-function testForNumber(prop) {
+function testForNumber(num) {
   return function (req, res, next) {
     const { data = {} } = req.body;
-    const number = data[prop];
-    if (typeof number === "number" && number > 0 && number === Math.floor(number)) {
+    const number = data[num];
+    if (typeof number === "number" && number > 0 ) {
       return next();
     }
     next({

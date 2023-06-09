@@ -1,8 +1,7 @@
-function testForArray(prop) {
+function testForArray(array) {
   return function (req, res, next) {
     const { data = {} } = req.body;
-    console.log(data[prop])
-    const arr = data[prop];
+    const arr = data[array];
     
     if (Array.isArray(arr) && arr.length > 0) {
       return next();
