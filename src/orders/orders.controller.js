@@ -79,16 +79,6 @@ function isOrderPending(req, res, next){
   })
 }
 
-function checkForIdMatch(req, res, next){
-  const { data: { id }} = req.body;
-  const checkId = res.locals.dish.id;
-  if (!id || id === checkId) { return next() }
-  next({
-    status: 400,
-    message: `Dish id does not match route id. Dish: ${id}, Route: ${checkId}`,
-  });
-};
-
 function hasDishes(req, res, next){
   const { data: {dishes}} = req.body;
   console.log(dishes)
